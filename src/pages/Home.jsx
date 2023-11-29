@@ -16,7 +16,6 @@ const Home = () => {
       try {
         const data = await fetchNewsData();
         setNewsData(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -44,8 +43,10 @@ const Home = () => {
             </div>
           );
         })}
+       
       </div>
     </div>
+
   );
 };
 

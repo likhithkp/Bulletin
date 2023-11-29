@@ -6,12 +6,12 @@ import Finance from './pages/Finance'
 import Sports from './pages/Sports'
 import Technology from './pages/Technology'
 import Navbar from './components/Navbar'
-import {NewsApiContext, fetchNewsData} from './context/Api'
+import {NewsApiContext, fetchNewsData, searchNews, beautyNews} from './context/Api'
 
 const App = () => {
   return (
     <div className='font-Poppins'>
-      <NewsApiContext.Provider value={{fetchNewsData}}>
+      <NewsApiContext.Provider value={{fetchNewsData, searchNews, beautyNews}}>
         <BrowserRouter>
         <Navbar/>
         <Routes>
