@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { NewsApiContext } from '../context/Api'
-import Image from '../assets/ImageNotFound.png'
 
 const Science = () => {
   const {newsCategory} = useContext(NewsApiContext);
@@ -30,7 +29,7 @@ const Science = () => {
           return (
             <div className='w-[360px] min-h-[400px] flex flex-col items-start gap-3 border border-black-100 rounded-md overflow-hidden cursor-pointer box-bg-[#d4ecff] hover:shadow-lg hover:bg-[#f9fdff] hover:-translate-y-2 transition-all' key={index}>
               <a href={news?.url} target="_blank" rel="noopener noreferrer">   
-              <img className='object-cover h-[180px] w-full' src={news?.urlToImage || Image} alt={news?.title}/>
+              <img className='object-cover h-[180px] w-full' src={news?.urlToImage} alt={news?.title}/>
               <div className='flex flex-col items-start gap-3 p-3'>
                 <h2 className='text-lg font-bold text-[#1b456c]'>{news?.title}</h2>
                 <div className='flex gap-4'>
