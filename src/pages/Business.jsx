@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { NewsApiContext } from '../context/Api'
-import Image from '../assets/ImageNotFound.png'
+import Image from "../assets/ImageNotFound.png"
 
 const Business = () => {
   const {newsCategory} = useContext(NewsApiContext);
