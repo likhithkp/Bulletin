@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NewsApiContext } from "../context/Api";
-import Image from "../assets/ImageNotFound.png";
 
 const Home = () => {
   const { fetchNewsData } = useContext(NewsApiContext);
@@ -75,7 +74,7 @@ const Home = () => {
                   <a href={news?.url} target="_blank" rel="noopener noreferrer">
                     <img
                       className="object-cover h-[180px] w-full"
-                      src={news?.urlToImage || Image}
+                      src={news?.urlToImage}
                       alt={news?.title}
                     />
                     <div className="flex flex-col items-start gap-3 p-3">
