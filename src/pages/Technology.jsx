@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { NewsApiContext } from '../context/Api'
+import Image from '../assets/ImageNotFound.png'
 
 const Technology = () => {
-  const {searchNews} = useContext(NewsApiContext);
+  const {newsCategory} = useContext(NewsApiContext);
   const [techData, setTechData] = useState([])
 
   const formatDate = (dateString) => {
@@ -13,14 +14,14 @@ const Technology = () => {
   useEffect(() => {
     const fetchTechData= async() => {
       try{
-        const techResultData = await searchNews('technology')
+        const techResultData = await newsCategory('technology')
         setTechData(techResultData)
       }catch(err){
         console.log(err)
       }
     }
     fetchTechData()
-  }, [searchNews])
+  }, [newsCategory])
 
   return (
     <div className='flex items-center justify-center mt-[3rem] h-full'>

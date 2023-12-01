@@ -39,6 +39,7 @@ const Home = () => {
     try {
       const searchData = await searchNews(searchInput);
       setSearchResultData(searchData);
+      console.log(searchData);
     } catch (err) {
       console.log(err);
     }

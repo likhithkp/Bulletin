@@ -2,9 +2,9 @@ import React, { useEffect, useState, useContext } from 'react'
 import { NewsApiContext } from '../context/Api'
 import Image from '../assets/ImageNotFound.png'
 
-const Sports = () => {
+const Science = () => {
   const {newsCategory} = useContext(NewsApiContext);
-  const [sportsData, setSportsData] = useState([])
+  const [scienceData, setScienceData] = useState([])
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
@@ -12,21 +12,21 @@ const Sports = () => {
   };
 
   useEffect(() => {
-    const fetchSportsData= async() => {
+    const fetchBeautyData= async() => {
       try{
-        const sportsResultData = await newsCategory('sports')
-        setSportsData(sportsResultData)
+        const scienceResultData = await newsCategory('science')
+        setScienceData(scienceResultData)
       }catch(err){
         console.log(err)
       }
     }
-    fetchSportsData()
+    fetchBeautyData()
   }, [newsCategory])
 
   return (
     <div className='flex items-center justify-center mt-[3rem] h-full'>
       <div className='grid grid-cols-3 gap-6 max-w-6xl'>
-        {sportsData.map((news, index) => {
+        {scienceData.map((news, index) => {
           return (
             <div className='w-[360px] min-h-[400px] flex flex-col items-start gap-3 border border-black-100 rounded-md overflow-hidden cursor-pointer box-bg-[#d4ecff] hover:shadow-lg hover:bg-[#f9fdff] hover:-translate-y-2 transition-all' key={index}>
               <a href={news?.url} target="_blank" rel="noopener noreferrer">   
@@ -49,4 +49,4 @@ const Sports = () => {
   )
 }
 
-export default Sports
+export default Science

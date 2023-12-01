@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   
   return (
-    <div className='w-full h-[80px] flex justify-around items-center bg-[#d4ecff]'>
-        <div className='text-[2rem]'>
+    <div className='hidden md:w-full md:h-[80px] md:flex md:justify-around md:items-center md:bg-[#d4ecff]'>
+        <div className='md:text-[2rem]'>
             <h1>Bulletin</h1>
         </div>
-        <div className='flex gap-6 text-lg'>
+        <div className='md:flex md:gap-6 md:text-lg'>
             <Link to='/'>Home</Link>
-            <Link to='/beauty'>Beauty</Link>
-            <Link to='/finance'>Finance</Link>
+            <Link to='/science'>Science</Link>
+            <Link to='/health'>Health</Link>
+            <Link to='/business'>Business</Link>
             <Link to='/sports'>Sports</Link>
             <Link to= '/technology'>Technology</Link>
-            <Link to= '/searchResults'></Link>
         </div>
     </div>
   )
